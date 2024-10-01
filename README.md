@@ -22,36 +22,39 @@ To implement univariate Linear Regression to fit a straight line using least squ
 Program to implement univariate Linear Regression to fit a straight line using least squares.
 Developed by: Harini.S
 RegisterNumber: 212223240048
-*/
-```
-```
+
 import numpy as np
 import matplotlib.pyplot as plt
-X =  np.array(eval(input()))
-Y = np.array(eval(input()))
-#mean
-X_mean = np.mean(X)
-Y_mean = np.mean(Y)
-num=0 #for slop
-denom=0 #for slop
-#to find sum of (xi-x') & (yi-y') & (xi-x')^2
+
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+
+num=0
+den=0 
 for i in range(len(X)):
-    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-    denom+=(X[i]-X_mean)**2
-m=num/denom #calculate slope
-b=Y_mean - m*X_mean
-print(m,b)
-#line equation
-y_predicted=m*X+b
-print(y_predicted)
-#to plot graph
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  den+=(X[i]-X_mean)**2
+
+m=num/den
+b=Y_mean-m*X_mean
+print("slope",m)
+print("y-predicted",b,"\n")
+
+y_pred = m*X + b
+print(y_pred,"\n")
 plt.scatter(X,Y)
-plt.plot(X,y_predicted,color="red")
+plt.plot(X,y_pred,color="green")
 plt.show()
+
+*/
 ```
 
 ## Output:
-![Screenshot 2024-08-30 133158](https://github.com/user-attachments/assets/46b29c87-de5d-4e24-968f-472e4c237827)
+![Screenshot 2024-10-01 105614](https://github.com/user-attachments/assets/a303fd24-6fed-49e8-9863-aeb6035c3c3e)
+
 
 
 ## Result:
